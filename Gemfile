@@ -33,7 +33,6 @@ gem 'jquery-rails'
 group :production do
   gem 'pg'
   gem 'nokogiri'
-  gem 'open-uri'
   #gem 'activerecord-postgresql-adapter'
 end  
 
