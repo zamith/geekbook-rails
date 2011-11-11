@@ -32,7 +32,6 @@ gem 'jquery-rails'
 
 group :production do
   gem 'pg'
-  gem 'thin'
   #gem 'activerecord-postgresql-adapter'
 end  
 
