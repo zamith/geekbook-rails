@@ -19,10 +19,6 @@ if Attendee.all.empty?
   
     profile_url = badge_html.css('div.yui-g p span.vcard a.url').first.attributes['href'].to_s
   
-    File.open('public/images/' + avatar_filename,'wb') do |f|
-      f.write(open('https://codebits.eu/' + avatar_filename).read)
-    end
-  
-    Attendee.create(:name => name, :avatar_filename => '/images/' + avatar_filename, :profile_url => profile_url)
+    Attendee.create(:name => name, :avatar_filename => "https://codebits.eu/"+avatar_filename, :profile_url => profile_url)
   end
 end
