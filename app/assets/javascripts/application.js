@@ -13,14 +13,14 @@ $(document).ready(function($) {
 	
   $('div#left-choice').live('click', function() {
     $.post('/attendees',
-           { attendee_id: $('div#left-choice span').attr('id') },
+           { attendee_id: $('div#left-choice span').attr('id'), possible1: $('div#left-choice span').attr('id'), possible2: $('div#right-choice span').attr('id')  },
            function(){ $('div#right-choice').fadeOut(1000, function() { window.location = '/'; } );
     });
   });
 
   $('div#right-choice').live('click', function() {
     $.post('/attendees',
-           { attendee_id: $('div#right-choice span').attr('id') },
+           { attendee_id: $('div#right-choice span').attr('id'), possible1: $('div#left-choice span').attr('id'), possible2: $('div#right-choice span').attr('id') },
            function(){ $('div#left-choice').fadeOut(1000, function() { window.location = '/'; } );
     });
   });

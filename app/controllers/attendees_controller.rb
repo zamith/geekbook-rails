@@ -13,8 +13,8 @@ class AttendeesController < ApplicationController
   
   def create
     respond_to do |format|
-      format.json do 
-        Attendee.find(params[:attendee_id]).add_geek_vote
+      format.json do      
+        Attendee.find(params[:attendee_id]).add_geek_vote if(params[:attendee_id] == params[:possible1] || params[:attendee_id] == params[:possible2])
         render :json => {'text' => ''}
       end  
     end  
